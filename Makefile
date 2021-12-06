@@ -11,7 +11,8 @@ TFLAG := --trace
 default: Vtop
 
 Vtop:
-	verilator $(SIMFLAGS) top.sv --exe --build sim_main.cpp $(TFLAG)
+	verilator $(SIMFLAGS) top.sv --exe sim_main.cpp $(TFLAG)
+	make -j -C bin -f Vtop.mk Vtop
 
 run:
 	./bin/Vtop
