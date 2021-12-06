@@ -41,10 +41,10 @@ private:
 
 class Clock {
 public:
-    Clock(vluint32_t period, bool val = false) {
+    Clock(vluint32_t period, vluint32_t phase = 0, bool val = false) {
         period_ = period;
         val_ = val;
-        now_ = 0;
+        now_ = -phase;
     }
 
     vluint32_t next_edge(void) {
